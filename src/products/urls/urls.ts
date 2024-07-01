@@ -24,7 +24,7 @@ export const routesWrapper = (controller: ProductsController) =>{
     router.post('/', 
         // validateFile,
         ...productValidators,
-        // validator.handleValidationErrors,
+        validator.handleValidationErrors,
         upload.single('file') ,
         controller.addNew
     )

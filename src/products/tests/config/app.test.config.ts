@@ -1,7 +1,7 @@
 import express from 'express'
 import { routesWrapper } from '../../urls/urls'
 import { ProductsController } from '../../controllers/controller'
-import { ProductDataAccess } from '../../data-acess/data-access'
+import { ProductDataAccess } from '../mocks/data-access'
 import { Product } from '../../data-acess/model'
 import { httpErrors } from '../../../z-library/HTTP/http-errors'
 
