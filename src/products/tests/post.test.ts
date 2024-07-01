@@ -3,7 +3,6 @@ import { app } from "./config/app.test.config"
 import { describe, test } from "@jest/globals"
 import { assert } from "../../z-library/testing/response-assertion"
 import { productData, badProductData } from "./mocks/test-data"
-import path from 'node:path'
 
 
 describe('Rentals POST Route', () => {
@@ -30,11 +29,7 @@ describe('Rentals POST Route', () => {
         async() =>{
             const response = await request(app).post('/products')
             .send(productData)
-                // .field('productName',productData.productName)
-                // .field('currentPrice', productData.currentPrice)
-                // .field('previousPrice', productData.previousPrice)
-                // .field('description', productData.description)
-                // .timeout({ deadline: 10000, response: 10000 });
+    
             assert.respondsWithCreatedResource(response)
         }
     )
