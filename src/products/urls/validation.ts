@@ -8,9 +8,11 @@ export const validateFile =  (req: Request, res: Response, next: NextFunction) =
             message: 'invalid input'
         });
     }
+
     const filetypes = /jpeg|jpg|png/;
     const mimetype = filetypes.test(req.file.mimetype);
     const extname = filetypes.test(req.file.originalname.split('.').pop() as string);
+
     if (!mimetype || !extname) {
       return res.status(400).json(
         { 
@@ -18,6 +20,7 @@ export const validateFile =  (req: Request, res: Response, next: NextFunction) =
             message: 'Inavalid input'
         });
     }
+    
     next();
 }
 

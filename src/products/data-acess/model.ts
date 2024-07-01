@@ -29,7 +29,6 @@ const productSchema: Schema = new Schema<Product, ProductModel>({
 	},
     selectedFile: { 
 		type: String, 
-		required: true 
 	}, // assuming the file is stored as a path or URL
 })
 

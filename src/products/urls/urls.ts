@@ -22,9 +22,9 @@ export const routesWrapper = (controller: ProductsController) =>{
 
     router.post('/:id', controller.respondWithMethodNotAllowed)
     router.post('/', 
-        validateFile,
+        // validateFile,
         ...productValidators,
-        validator.handleValidationErrors,
+        // validator.handleValidationErrors,
         upload.single('file') ,
         controller.addNew
     )
