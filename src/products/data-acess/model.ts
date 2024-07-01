@@ -1,6 +1,6 @@
 import mongoose, { Document, HydratedDocument, Model, Schema } from 'mongoose'
 
-export interface Product extends Document {
+export interface Product {
 	productName: string
 	currentPrice: number
 	previousPrice: number
