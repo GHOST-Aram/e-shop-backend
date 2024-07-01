@@ -13,9 +13,12 @@
   "description": "",
   "dependencies": {
     "@tsconfig/node20": "^20.1.4",
+    "@types/mongoose": "^5.11.97",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "mongoose": "^8.4.4",
     "multer": "^1.4.5-lts.1"
   },
   "devDependencies": {

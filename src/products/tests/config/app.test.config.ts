@@ -12,6 +12,6 @@ app.use(express.urlencoded())
 const dataAccess = new ProductDataAccess(Product)
 const controller = new ProductsController(dataAccess, 'products')
 
-app.use(routesWrapper(controller))
+app.use("/products",routesWrapper(controller))
 
 export { app }
