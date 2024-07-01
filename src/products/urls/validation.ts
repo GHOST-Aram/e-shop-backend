@@ -3,7 +3,10 @@ import { validator } from "../../z-library/validation/validator";
 
 export const validateFile =  (req: Request, res: Response, next: NextFunction) => {
     if (!req.file) {
-      return res.status(400).json({error: 'File is required.', message: 'invalid input'});
+        return res.status(400).json({
+            errors: ['File is required.'], 
+            message: 'invalid input'
+        });
     }
     const filetypes = /jpeg|jpg|png/;
     const mimetype = filetypes.test(req.file.mimetype);
@@ -11,7 +14,7 @@ export const validateFile =  (req: Request, res: Response, next: NextFunction) =
     if (!mimetype || !extname) {
       return res.status(400).json(
         { 
-            error: 'Invalid file type. Only JPEG and PNG are allowed.',
+            errors: ['Invalid file type. Only JPEG and PNG are allowed.'],
             message: 'Inavalid input'
         });
     }
