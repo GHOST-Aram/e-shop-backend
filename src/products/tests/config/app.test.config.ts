@@ -8,7 +8,7 @@ import { httpErrors } from '../../../z-library/HTTP/http-errors'
 const app = express()
 
 app.use(express.json())
-app.use(express.urlencoded())
+app.use(express.urlencoded({ extended: true }))
 
 const dataAccess = new ProductDataAccess(Product)
 const controller = new ProductsController(dataAccess, 'products')
