@@ -1,5 +1,5 @@
 import { NextFunction, Response, Request } from "express";
-import { validator } from "../../z-library/validation/validator";
+import { validator } from "../../../z-library/validation/validator";
 
 export const validateFile =  (req: Request, res: Response, next: NextFunction) => {
     if (!req.file) {

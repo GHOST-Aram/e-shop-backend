@@ -1,6 +1,6 @@
-import { Accessible } from "../../../z-library/bases/accessible";
+import { Accessible } from "../../../../z-library/bases/accessible";
 import { ProductModel, Product, HydratedProductDoc } from "../../data-acess/model";
-import { Paginator } from "../../../z-library/HTTP/http-response";
+import { Paginator } from "../../../../z-library/HTTP/http-response";
 import { productData } from "./test-data";
 
 const AVAILABLE_ID = '64c9e4f2df7cc072af2ac9e4'

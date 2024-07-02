@@ -3,7 +3,7 @@ import { routesWrapper } from '../../urls/urls'
 import { ProductsController } from '../../controllers/controller'
 import { ProductDataAccess } from '../mocks/data-access'
 import { Product } from '../../data-acess/model'
-import { httpErrors } from '../../../z-library/HTTP/http-errors'
+import { httpErrors } from '../../../../z-library/HTTP/http-errors'
 
 const app = express()
 

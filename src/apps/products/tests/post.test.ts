@@ -1,7 +1,7 @@
 import request from "supertest"
 import { app } from "./config/app.test.config"
 import { describe, test } from "@jest/globals"
-import { assert } from "../../z-library/testing/response-assertion"
+import { assert } from "../../../z-library/testing/response-assertion"
 import { productData, badProductData } from "./mocks/test-data"
 
 

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { ProductsController } from "../controllers/controller";
 import { productValidators, validateFile } from "./validation";
-import { validator } from "../../z-library/validation/validator";
+import { validator } from "../../../z-library/validation/validator";
 import multer from "multer";
 
 const router = Router()
