@@ -7,27 +7,19 @@ export class ProductsController extends GenericController<ProductDataAccess>{
     
     public addNew = async(req: Request, res: Response, next: NextFunction) =>{
         
-        let inputData = req.body
-        const { productName, currentPrice, previousPrice, description }: Product = inputData;
+        let inputData: Product = req.body
+        const file: any = req.file
         
-
-        console.log('File: ', req.file)
-        console.log('Body: ', req.body)
-        if(req.file){
-            const file: any = req.file
-            const selectedFile: string = file.path 
-
-            inputData = {
-                productName,
-                currentPrice,
-                previousPrice,
-                description,
-                selectedFile,
-            }
-        }
-
         try {
-            const newDocument = await this.dataAccess.createNew(inputData)
+            const newDocument = await this.dataAccess.createNew({
+                ...inputData, 
+                image:{
+                    name: file.originalname,
+                    data: file.buffer,
+                    contentType: file.mimetype
+                }
+            })
+
             this.respondWithCreatedResource(newDocument, res)
         } catch (error) {
             next(error)

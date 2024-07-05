@@ -9,14 +9,7 @@ import { Product } from "../data-acess/model";
 const router = Router()
 
 // Multer setup for file uploads
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, './assets/product_images'); // specify the upload directory
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.originalname); // use the original filename
-    },
-  });
+const storage = multer.memoryStorage();
   
 const upload = multer({ storage });
   

@@ -5,7 +5,11 @@ export interface Product {
 	currentPrice: number
 	previousPrice: number
 	description: string
-	selectedFile: string
+	image: {
+		name: string,
+		data: Buffer,
+		contentType: string
+	}
 }
 
 export type ProductModel = Model<Product>
@@ -27,9 +31,11 @@ const productSchema: Schema = new Schema<Product, ProductModel>({
 		type: String, 
 		required: true 
 	},
-    selectedFile: { 
-		type: String, 
-	}, // assuming the file is stored as a path or URL
+    image: { 
+		name: String,
+		data: Buffer,
+		contentType: String 
+	},
 })
 
 export type HydratedProductDoc = HydratedDocument<Product>
