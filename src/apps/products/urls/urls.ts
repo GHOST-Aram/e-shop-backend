@@ -11,23 +11,23 @@ const router = Router()
 // Multer setup for file uploads
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'uploads/'); // specify the upload directory
+      cb(null, './assets/product_images'); // specify the upload directory
     },
     filename: function (req, file, cb) {
       cb(null, file.originalname); // use the original filename
     },
   });
   
-const upload = multer({ storage: storage });
+const upload = multer({ storage });
   
 export const routesWrapper = (controller: ProductsController) =>{
 
     router.post('/:id', controller.respondWithMethodNotAllowed)
     router.post('/', 
+        upload.single('file') ,
         // validateFile,
         ...productValidators,
         validator.handleValidationErrors,
-        upload.single('file') ,
         controller.addNew
     )
 

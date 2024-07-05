@@ -10,6 +10,9 @@ export class ProductsController extends GenericController<ProductDataAccess>{
         let inputData = req.body
         const { productName, currentPrice, previousPrice, description }: Product = inputData;
         
+
+        console.log('File: ', req.file)
+        console.log('Body: ', req.body)
         if(req.file){
             const file: any = req.file
             const selectedFile: string = file.path 
